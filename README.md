@@ -1,5 +1,5 @@
 # RoadProfile
-A python module generate road profile based on ISO 8608
+A python module generates road surface profile based on ISO 8608
 
 ## About the algorithm
 
