@@ -78,7 +78,7 @@ class RoadProfile(object):
         except:
             raise ValueError("Profile name is not predefined.")
 
-    def get_profile_class(self, profile_class="A", L=100, dx=0.1):
+    def get_profile_by_class(self, profile_class="A", L=100, dx=0.1):
         """Summary
 
         Args:

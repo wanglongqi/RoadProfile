@@ -23,5 +23,11 @@ This is a Python implementation of road profile generation method described in
     # Set profile to A and regenerate a road profile
     testprofile.get_profile_by_class("A", 1, 0.1)
 
+### Generate a class A profile:
+    
+[The `example1.py` file](./example/example1.py) in example folder generates a class A profile. The PSD matches with ISO 8608:
+
+![PSD](./example/example1.png)
+
 
 This code is released under GPLv3, please check LICENSE file for details.
