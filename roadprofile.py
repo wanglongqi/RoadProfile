@@ -65,7 +65,7 @@ class RoadProfile(object):
         for i in range(len(x)):
             profile[i] = np.sum(Gd*np.cos(2*np.pi*ns*x[i]-phase))
 
-        return profile
+        return [x,profile]
 
     def set_profile_class(self, profile_class="A"):
         """Summary
@@ -107,4 +107,4 @@ if __name__ == '__main__':
     # Regenerate the road profile with new class
     print testprofile.generate(1, 0.1)
     # Set profile to A and regenerate a road profile
-    testprofile.get_profile_by_class("A", 1, 0.1)
+    print testprofile.get_profile_by_class("A", 1, 0.1)
