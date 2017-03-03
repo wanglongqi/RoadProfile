@@ -43,12 +43,13 @@ class RoadProfile(object):
         '''
         self.Gdn0 = Gdn0
 
-    def generate(self, L=100., dx=0.1):
+    def generate(self, L=100., dx=0.1, center = False):
         """Summary
 
         Args:
             L (float, optional): Length of the road profile
             dx (float, optional): Interval between two points
+            center (bool, optional): Center the profile mean to zero
 
         Returns:
             array : Road profile
@@ -65,6 +66,9 @@ class RoadProfile(object):
         for i in range(len(x)):
             profile[i] = np.sum(Gd*np.cos(2*np.pi*ns*x[i]-phase))
 
+        if center:
+            profile -= np.mean(profile)
+
         return [x,profile]
 
     def set_profile_class(self, profile_class="A"):
@@ -78,13 +82,14 @@ class RoadProfile(object):
         except:
             raise ValueError("Profile name is not predefined.")
 
-    def get_profile_by_class(self, profile_class="A", L=100, dx=0.1):
+    def get_profile_by_class(self, profile_class="A", L=100, dx=0.1, center = False):
         """Summary
 
         Args:
             profile_class (str, optional): A-F
             L (int, optional): Length of the road profile
             dx (float, optional): Interval between two points
+            center (bool, optional): Center the profile mean to zero
 
         Returns:
             array: Road profile
