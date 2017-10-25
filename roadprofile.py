@@ -2,6 +2,8 @@
 """
 Created on Thu Mar 02 08:45:23 2017
 
+Visit https://github.com/wanglongqi/RoadProfile/blob/master/roadprofile.py for lastest version.
+
 @author: Longqi WANG
 """
 
