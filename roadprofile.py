@@ -27,7 +27,7 @@ class RoadProfile(object):
     '''
 
     n_min = 0.0078  # min spatial frequency
-    n_max = 40.  # max spatial frequency
+    n_max = 4.0  # max spatial frequency
     n0 = 0.1  # reference spatial frequency
     w = 2  # set according to the value in page 14 of ISO
     iso_Gdn0 = {"A": 32E-6,
