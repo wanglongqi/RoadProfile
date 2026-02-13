@@ -17,7 +17,9 @@ Basic road profile generation using frequency domain method (ISO 8608).
 Road profile with time-domain Butterworth lowpass filtering. Supports dynamic parameters.
 
 ### DynamicRoadProfile
-Dynamic road profile generator that can change class and sampling interval in real-time.
+Dynamic road profile generator that supports:
+- Batch generation with varying classes
+- Real-time generator with dynamic class/dx changes
 
 ## Examples
 
@@ -67,9 +69,10 @@ profile = drp.generate(L=15, dx=0.1, profile_classes=classes)
 from roadprofile import DynamicRoadProfile
 
 drp = DynamicRoadProfile()
+drp.set_profile_class("A")  # Set class before creating generator
 gen = drp.create_generator(dx=0.1)
 
-# Get next point (class A by default)
+# Get next point
 p1 = next(gen)
 
 # Change class
@@ -79,10 +82,6 @@ p2 = next(gen)
 # Change sampling interval
 gen.send(0.05)
 p3 = next(gen)
-
-# Change both: (class, dx)
-gen.send(('A', 0.2))
-p4 = next(gen)
 ```
 
 ### Irregular Spacing
@@ -99,6 +98,35 @@ rp.set_profile_class("A")
 x_irregular = np.array([0, 0.05, 0.15, 0.3, 0.5, 0.8, 1.2, 1.5, 2.0])
 profile = rp.generate_at_x(x_irregular)
 ```
+
+## Testing
+
+Run regression tests with PSD validation:
+
+```bash
+cd example
+python test_regression.py
+```
+
+This generates validation plots:
+- `test_psd_validation.png` - RoadProfile PSD validation
+- `test_filtered_psd_validation.png` - FilteredRoadProfile PSD validation  
+- `test_generate_at_x_psd.png` - generate_at_x PSD validation
+- `test_point_generator_psd.png` - point_generator PSD validation
+
+## PSD Validation Results
+
+### RoadProfile (Frequency Domain)
+![PSD Validation](example/test_psd_validation.png)
+
+### FilteredRoadProfile (Time Domain Filter)
+![Filtered PSD](example/test_filtered_psd_validation.png)
+
+### generate_at_x (Irregular Spacing)
+![generate_at_x PSD](example/test_generate_at_x_psd.png)
+
+### point_generator (Real-time)
+![point_generator PSD](example/test_point_generator_psd.png)
 
 ## ISO Classes
 
