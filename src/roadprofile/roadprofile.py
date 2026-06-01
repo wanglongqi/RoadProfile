@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 """
-Created on Thu Mar 02 08:45:23 2017
-
 Visit https://github.com/wanglongqi/RoadProfile/blob/master/roadprofile.py for lastest version.
-
-@author: Longqi WANG
 """
 
 import numpy as np
