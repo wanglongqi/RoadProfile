@@ -4,16 +4,16 @@ build-backend = "hatchling.build"
 
 [project]
 name = "roadprofile"
-version = "1.0.0"
+version = "1.0.4"
 description = "ISO 8608 road profile generator in Python"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = {text = "GPLv3"}
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Programming Language :: Python :: 3",
     "Topic :: Scientific/Engineering",
 ]

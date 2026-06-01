@@ -4,9 +4,12 @@ A Python module for generating road surface profiles based on ISO 8608, with sup
 
 ## Installation
 
+You can install `roadprofile` directly from PyPI:
+
 ```bash
-pip install -r requirements.txt
+pip install roadprofile
 ```
+
 
 ## Classes
 
